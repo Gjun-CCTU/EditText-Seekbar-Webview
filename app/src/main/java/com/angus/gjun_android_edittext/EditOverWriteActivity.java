@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class EditOverWriteActivity extends AppCompatActivity {
-    Button btn1, btn2;
+    Button btn1, btn2,btn3;
     EditText et1, et2, et3;
     TextView tv1,tv2, tv3, tv4;
 
@@ -21,6 +21,7 @@ public class EditOverWriteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_over_write);
         btn1 = (Button) findViewById(R.id.button);
         btn2 = (Button) findViewById(R.id.button2);
+        btn3 = (Button) findViewById(R.id.button3);
         et1 = (EditText) findViewById(R.id.editText);
         et2 = (EditText) findViewById(R.id.editText2);
         et3 = (EditText) findViewById(R.id.editText3);
@@ -100,10 +101,16 @@ public class EditOverWriteActivity extends AppCompatActivity {
                         et3.setText("");
                         tv1.setText("");
                         break;
+
+                    case R.id.button3 :
+                        Intent intent = new Intent(EditOverWriteActivity.this, CheckBox_Click.class);
+                        startActivity(intent);
+                        break;
                 }
             }
         };
         btn1.setOnClickListener(OCL);
         btn2.setOnClickListener(OCL);
+        btn3.setOnClickListener(OCL);
     }
 }
