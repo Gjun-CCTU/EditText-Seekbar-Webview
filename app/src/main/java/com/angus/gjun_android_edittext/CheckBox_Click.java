@@ -1,5 +1,6 @@
 package com.angus.gjun_android_edittext;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +16,7 @@ public class CheckBox_Click extends AppCompatActivity {
     CheckBox cb1, cb2, cb3;
     EditText et6, et7, et8;
     RadioButton rb1, rb2, rb3;
-    Button btn4;
+    Button btn4, btn6;
     TextView tv6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,15 @@ public class CheckBox_Click extends AppCompatActivity {
         rb3 = (RadioButton) findViewById(R.id.radioButton3);
         btn4 = (Button) findViewById(R.id.button4);
         tv6 = (TextView)findViewById(R.id.textView6);
+        btn6 = (Button)findViewById(R.id.button6);
+
+        btn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CheckBox_Click.this, SeekBar.class);
+                startActivity(intent);
+            }
+        });
 
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
