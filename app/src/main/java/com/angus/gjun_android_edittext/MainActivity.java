@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn1, btn2, btn3, btn5;
+    Button btn1, btn2, btn3, btn5, btn10;
     EditText et1, et2;
     TextView tv1;
 
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         btn2 = (Button) findViewById(R.id.btn2);
         btn3 = (Button) findViewById(R.id.btn3);
         btn5 = (Button) findViewById(R.id.button5);
+        btn10 = (Button) findViewById(R.id.button10);
         et1 = (EditText) findViewById(R.id.et1);
         et2 = (EditText) findViewById(R.id.et2);
         tv1 = (TextView) findViewById(R.id.tv1);
@@ -51,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.button5:
                         Intent intent2 = new Intent(MainActivity.this, SeekBarRGB.class);
                         startActivity(intent2);
+
+                    case  R.id.button10:
+                        Intent intent3 = new Intent(MainActivity.this, MyWebView.class);
+                        startActivity(intent3);
                 }
             }
         };
@@ -59,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(OCL);
         btn3.setOnClickListener(OCL);
         btn5.setOnClickListener(OCL);
+        btn10.setOnClickListener(OCL);
 
     }
 }

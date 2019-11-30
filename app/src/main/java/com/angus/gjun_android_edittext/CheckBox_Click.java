@@ -18,6 +18,9 @@ public class CheckBox_Click extends AppCompatActivity {
     RadioButton rb1, rb2, rb3;
     Button btn4, btn6;
     TextView tv6;
+    android.widget.SeekBar sb1, sb2, sb3;
+    int q1, q2 ,q3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,36 @@ public class CheckBox_Click extends AppCompatActivity {
         btn4 = (Button) findViewById(R.id.button4);
         tv6 = (TextView)findViewById(R.id.textView6);
         btn6 = (Button)findViewById(R.id.button6);
+        sb1 = (android.widget.SeekBar) findViewById(R.id.seekBar1);
+        sb2 = (android.widget.SeekBar) findViewById(R.id.seekBar2);
+        sb3 = (android.widget.SeekBar) findViewById(R.id.seekBar3);
+
+
+        android.widget.SeekBar.OnSeekBarChangeListener OSBCL = new android.widget.SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(android.widget.SeekBar seekBar, int progress, boolean fromUser) {
+
+        }
+
+            @Override
+            public void onStartTrackingTouch(android.widget.SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(android.widget.SeekBar seekBar) {
+                Toast.makeText(CheckBox_Click.this, "數量" + seekBar.getProgress() + "杯", Toast.LENGTH_SHORT).show();
+                q1 = sb1.getProgress();
+                q2 = sb2.getProgress();
+                q3 = sb3.getProgress();
+                tv6.setText(cb1.getText() +":"  +q1 + "杯\n" +
+                        cb2.getText() +":" + q2 + "杯\n" +
+                        cb3.getText() +":" +q3 + "杯\n");
+            }
+        };
+        sb1.setOnSeekBarChangeListener(OSBCL);
+        sb2.setOnSeekBarChangeListener(OSBCL);
+        sb3.setOnSeekBarChangeListener(OSBCL);
 
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,15 +83,15 @@ public class CheckBox_Click extends AppCompatActivity {
                 double disSum = 0;
                 String msg = "";
                 if (cb1.isChecked()){
-                    sum = sum + Integer.parseInt(et6.getText().toString());
+                    sum = sum + Integer.parseInt(et6.getText().toString()) * q1;
                     msg = msg + cb1.getText() + et6.getText() + "\n";
                 }
                 if (cb2.isChecked()){
-                    sum = sum + Integer.parseInt(et7.getText().toString());
+                    sum = sum + Integer.parseInt(et7.getText().toString()) * q2;
                     msg = msg + cb2.getText() + et7.getText() + "\n";
                 }
                 if (cb3.isChecked()){
-                    sum = sum + Integer.parseInt(et8.getText().toString());
+                    sum = sum + Integer.parseInt(et8.getText().toString()) * q3;
                     msg = msg + cb3.getText() + et8.getText() + "\n";
                 }
 
@@ -72,7 +105,7 @@ public class CheckBox_Click extends AppCompatActivity {
                     msg = msg + "折扣: " +rb3.getText() + "\n";
                     disSum = sum * 0.9;
                 }
-                tv6.setText(msg + "原始金額" + sum + "\n" + "折扣金額 :" + disSum);
+                tv6.setText(msg + "原始金額" + sum + "\n" + "折扣後金額 :" + disSum);
             }
         });
 

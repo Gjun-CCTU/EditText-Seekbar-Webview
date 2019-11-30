@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".CheckBox_Click">
 
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="123dp"
+        android:layout_height="39dp"
+        android:max="10"
+        app:layout_constraintStart_toEndOf="@+id/editText6"
+        app:layout_constraintTop_toTopOf="@+id/editText6" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="123dp"
+        android:layout_height="39dp"
+        android:max="10"
+        app:layout_constraintStart_toEndOf="@+id/editText7"
+        app:layout_constraintTop_toTopOf="@+id/editText7" />
+
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
@@ -17,14 +33,12 @@
         android:id="@+id/checkBox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="68dp"
         android:layout_marginEnd="120dp"
         android:layout_marginRight="120dp"
         android:text="百香雙響炮"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,9 +46,8 @@
         android:id="@+id/checkBox2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="80dp"
         android:text="奶茶三兄弟"
-        app:layout_constraintEnd_toEndOf="@+id/checkBox1"
         app:layout_constraintStart_toStartOf="@+id/checkBox1"
         app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
 
@@ -43,8 +56,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
         android:text="金拮檸檬"
         app:layout_constraintEnd_toEndOf="@+id/checkBox2"
         app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
@@ -53,8 +66,8 @@
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
         android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -73,46 +86,36 @@
         android:id="@+id/imageView3"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:srcCompat="@drawable/p3" />
 
     <EditText
         android:id="@+id/editText6"
-        android:layout_width="151dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="41dp"
+        android:layout_height="38dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/checkBox1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/checkBox1" />
 
     <EditText
         android:id="@+id/editText7"
-        android:layout_width="159dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="47dp"
+        android:layout_height="35dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/checkBox2"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        app:layout_constraintTop_toTopOf="@+id/checkBox2" />
 
     <EditText
         android:id="@+id/editText8"
-        android:layout_width="156dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="48dp"
+        android:layout_height="35dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/checkBox3"
-        app:layout_constraintTop_toBottomOf="@+id/editText7" />
+        app:layout_constraintTop_toTopOf="@+id/checkBox3" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -173,12 +176,19 @@
         android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginLeft="148dp"
         android:text="下一頁"
         app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/editText8" />
+        app:layout_constraintTop_toTopOf="@+id/button4" />
+
+    <SeekBar
+        android:id="@+id/seekBar3"
+        android:layout_width="123dp"
+        android:layout_height="39dp"
+        android:max="10"
+        app:layout_constraintStart_toEndOf="@+id/editText8"
+        app:layout_constraintTop_toTopOf="@+id/editText8" />
 
 
 </android.support.constraint.ConstraintLayout>
